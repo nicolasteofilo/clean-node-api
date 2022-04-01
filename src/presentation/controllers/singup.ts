@@ -4,12 +4,11 @@ import { basRequest } from '../helpers/http-heler'
 
 export class SingUpController {
   handle (httpRequest: HttpRequest): HttpResponse {
-    if (!httpRequest.body.name) {
-      return basRequest(new MissingParamError('name'))
-    }
-
-    if (!httpRequest.body.email) {
-      return basRequest(new MissingParamError('email'))
+    const requiredFields = ['name', 'email']
+    for (const fields of requiredFields) {
+      if (!httpRequest.body[fields]) {
+        return basRequest(new MissingParamError(fields))
+      }
     }
   }
 }
