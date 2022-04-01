@@ -7,7 +7,7 @@
     "prepare": "husky install",
     "lint": "eslint .",
     "lint:fix": "yarn lint -- --fix",
-    "test": "jest --passWithNoTests",
+    "test": "jest --passWithNoTests --watch",
     "test:staged": "jest --passWithNoTests"
   },
   "devDependencies": {
