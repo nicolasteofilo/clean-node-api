@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1648774054003" clover="3.2.0">
-  <project timestamp="1648774054003" name="All files">
-    <metrics statements="8" coveredstatements="8" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1" elements="10" coveredelements="10" complexity="0" loc="8" ncloc="8" packages="1" files="1" classes="1"/>
+<coverage generated="1648775709727" clover="3.2.0">
+  <project timestamp="1648775709727" name="All files">
+    <metrics statements="19" coveredstatements="19" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1" elements="22" coveredelements="22" complexity="0" loc="19" ncloc="19" packages="1" files="1" classes="1"/>
     <file name="singup.ts" path="/home/nicolasteofilo/dev/courses/clean-node-api/src/presentation/controllers/singup.ts">
-      <metrics statements="8" coveredstatements="8" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <metrics statements="19" coveredstatements="19" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <line num="1" count="1" type="stmt"/>
-      <line num="2" count="1" type="cond" truecount="1" falsecount="0"/>
+      <line num="2" count="1" type="stmt"/>
       <line num="3" count="1" type="stmt"/>
-      <line num="4" count="1" type="stmt"/>
-      <line num="5" count="1" type="stmt"/>
+      <line num="4" count="1" type="cond" truecount="1" falsecount="0"/>
+      <line num="5" count="2" type="cond" truecount="1" falsecount="0"/>
       <line num="6" count="1" type="stmt"/>
       <line num="7" count="1" type="stmt"/>
       <line num="8" count="1" type="stmt"/>
+      <line num="9" count="1" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="12" count="1" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="14" count="1" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="18" count="2" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
