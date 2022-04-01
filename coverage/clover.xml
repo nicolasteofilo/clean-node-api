@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1648773805544" clover="3.2.0">
-  <project timestamp="1648773805544" name="All files">
+<coverage generated="1648774054003" clover="3.2.0">
+  <project timestamp="1648774054003" name="All files">
     <metrics statements="8" coveredstatements="8" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1" elements="10" coveredelements="10" complexity="0" loc="8" ncloc="8" packages="1" files="1" classes="1"/>
     <file name="singup.ts" path="/home/nicolasteofilo/dev/courses/clean-node-api/src/presentation/controllers/singup.ts">
       <metrics statements="8" coveredstatements="8" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
