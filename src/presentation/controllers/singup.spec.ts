@@ -3,7 +3,7 @@ import { MissingParamError } from '../errors/missing-param-error'
 import { InValidParamsError } from '../errors/invalid-params-error'
 import { EmailValidator } from '../protocols/email-validator'
 
-interface SutTypes {
+export interface SutTypes {
   sut: SingUpController
   emailValidatorStub: EmailValidator
 }
@@ -98,5 +98,21 @@ describe('SingUp Controller', () => {
     const httpResponse = sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
     expect(httpResponse.body).toEqual(new InValidParamsError('email'))
+  })
+
+  test('Should call EmailValidator with correct email', () => {
+    const { sut, emailValidatorStub } = makeSut()
+    const isValidSpy = jest.spyOn(emailValidatorStub, 'isValid')
+    const httpRequest = {
+      body: {
+        name: 'any_name',
+        email: 'any_email@mail.com',
+        password: 'any_password',
+        passwordConfirmation: 'any_password'
+      }
+    }
+
+    sut.handle(httpRequest)
+    expect(isValidSpy).toHaveBeenCalledWith('any_email@mail.com')
   })
 })
