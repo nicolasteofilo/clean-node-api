@@ -128,3 +128,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+coverage/lcov-report/singup.ts.html
+coverage/lcov-report/index.html
+coverage/lcov.info
