@@ -5,7 +5,7 @@ import {
   HttpResponse,
   AddAccount
 } from './singup-protocols'
-import { badRequest, serverError } from '../../helpers/http-helper'
+import { badRequest, serverError, ok } from '../../helpers/http-helper'
 
 import { MissingParamError, InvalidParamError } from '../../errors'
 
@@ -50,10 +50,7 @@ export class SingUpController implements Controller {
         password
       })
 
-      return {
-        statusCode: 200,
-        body: accout
-      }
+      return ok(accout, 201)
     } catch (error) {
       return serverError()
     }

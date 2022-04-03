@@ -14,3 +14,10 @@ export const serverError = (): HttpResponse => (
     body: new ServerError()
   }
 )
+
+export const ok = (data: any, statusCode = 200): HttpResponse => (
+  {
+    statusCode: statusCode,
+    body: data
+  }
+)
