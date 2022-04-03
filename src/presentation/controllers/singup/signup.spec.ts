@@ -1,9 +1,16 @@
 import { SingUpController } from './signup'
+import {
+  AccountModel,
+  AddAccount,
+  AddAccountModel,
+  EmailValidator
+} from './singup-protocols'
 
-import { MissingParamError, InvalidParamError, ServerError } from '../errors'
-import { EmailValidator } from '../protocols'
-import { AddAccount, AddAccountModel } from '../../domain/useCases/add-account'
-import { AccountModel } from '../../domain/models/account'
+import {
+  MissingParamError,
+  InvalidParamError,
+  ServerError
+} from '../../errors'
 
 const makeEmailValidator = (): EmailValidator => {
   class EmailValidatorStub implements EmailValidator {
@@ -140,7 +147,9 @@ describe('SingUp Controller', () => {
 
     const httpResponse = sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
-    expect(httpResponse.body).toEqual(new InvalidParamError('passwordConfirmation'))
+    expect(httpResponse.body).toEqual(
+      new InvalidParamError('passwordConfirmation')
+    )
   })
 
   test('Should call EmailValidator with correct email', () => {
