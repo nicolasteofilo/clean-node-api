@@ -1,7 +1,3 @@
-/*
- * For a detailed explanation regarding each configuration property and type check, visit:
- * https: */
-
 module.exports = {
   roots: ['<rootDir>/src'],
   // collectCoverage: true,
