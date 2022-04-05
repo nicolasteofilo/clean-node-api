@@ -2,7 +2,7 @@
  * For a detailed explanation regarding each configuration property and type check, visit:
  * https: */
 
-export default {
+module.exports = {
   roots: ['<rootDir>/src'],
   // collectCoverage: true,
   collectCoverageFrom: ['<rootDir>/src/**/*.ts'],
