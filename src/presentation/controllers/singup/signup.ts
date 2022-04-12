@@ -52,7 +52,7 @@ export class SingUpController implements Controller {
 
       return ok(account, 201)
     } catch (error) {
-      return serverError()
+      return serverError(error)
     }
   }
 }
