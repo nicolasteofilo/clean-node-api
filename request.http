@@ -1,0 +1,9 @@
+POST http://localhost:3333/api/singup
+content-type: application/json
+
+{
+	"name": "John",
+	"email": "john@email.com",
+	"password": "12345654123",
+	"passwordConfirmation": "12345654123"
+}

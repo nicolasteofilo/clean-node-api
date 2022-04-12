@@ -1,4 +1,4 @@
-import { SingUpController } from './signup'
+import { SignUpController } from './signup'
 import {
   AccountModel,
   AddAccount,
@@ -40,7 +40,7 @@ const makeAddAccount = (): AddAccount => {
 }
 
 export interface SutTypes {
-  sut: SingUpController
+  sut: SignUpController
   emailValidatorStub: EmailValidator
   addAccountStub: AddAccount
 }
@@ -48,7 +48,7 @@ export interface SutTypes {
 const makeSut = (): SutTypes => {
   const emailValidatorStub = makeEmailValidator()
   const addAccountStub = makeAddAccount()
-  const sut = new SingUpController(emailValidatorStub, addAccountStub)
+  const sut = new SignUpController(emailValidatorStub, addAccountStub)
   return {
     sut,
     emailValidatorStub,
@@ -65,7 +65,7 @@ const makeFakeRequest = (): HttpRequest => ({
   }
 })
 
-describe('SingUp Controller', () => {
+describe('SignUp Controller', () => {
   test('Should return 400 if is no name is provided', async () => {
     const { sut } = makeSut()
     const httpRequest = {

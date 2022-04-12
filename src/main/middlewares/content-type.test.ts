@@ -1,24 +1,23 @@
-import { Request, Response } from 'express'
 import request from 'supertest'
 import app from '../config/app'
 
 describe('Content Type Middleware', () => {
-  test('Should return Content Type as json by default', async () => {
-    app.get('/test_content_type_json', (req: Request, res: Response) => {
-      res.send({ message: 'ok' })
+  test('Should return default content type as json', async () => {
+    app.get('/test_content_type', (req, res) => {
+      res.send('')
     })
     await request(app)
-      .get('/test_content_type_json')
-      .expect('content-type', /json/i)
+      .get('/test_content_type')
+      .expect('content-type', /json/)
   })
 
-  test('Should return xml type when forced', async () => {
-    app.get('/test_content_type_xml', (req: Request, res: Response) => {
+  test('Should return xml content type when forced', async () => {
+    app.get('/test_content_type_xml', (req, res) => {
       res.type('xml')
-      res.send({ message: 'ok' })
+      res.send('')
     })
     await request(app)
       .get('/test_content_type_xml')
-      .expect('content-type', /xml/i)
+      .expect('content-type', /xml/)
   })
 })

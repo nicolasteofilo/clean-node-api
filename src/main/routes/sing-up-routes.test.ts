@@ -1,9 +1,8 @@
 import request from 'supertest'
 import app from '../config/app'
-import { faker } from '@faker-js/faker'
 import { MongoHelper } from '../../infra/db/mongodb/helpers/mongo-helper'
 
-describe('SingUp Routes', () => {
+describe('SignUp Routes', () => {
   beforeAll(async () => {
     await MongoHelper.connect(process.env.MONGO_URL)
   })
@@ -17,14 +16,14 @@ describe('SingUp Routes', () => {
     await accountCollection.deleteMany({})
   })
 
-  test('Should an account on success', async () => {
+  test('Should return an account on success', async () => {
     await request(app)
-      .post('/api/singup')
+      .post('/api/signup')
       .send({
-        name: faker.name.findName(),
-        email: faker.internet.email(),
-        password: '123456',
-        passwordConfirmation: '123456'
+        name: 'Rodrigo',
+        email: 'rodrigo.manguinho@gmail.com',
+        password: '123',
+        passwordConfirmation: '123'
       })
       .expect(201)
   })
