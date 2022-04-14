@@ -6,7 +6,7 @@ MongoHelper.connect(env.mongoUrl)
   .then(async () => {
     const app = (await import('./config/app')).default
     console.log('📊 Connected to MongoDB')
-    app.listen(env.port, () =>
+    app.listen(3333, () =>
       console.log(`🏃 Running on port http://localhost:${env.port}!`)
     )
   })
