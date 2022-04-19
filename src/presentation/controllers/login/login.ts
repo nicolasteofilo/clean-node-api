@@ -30,8 +30,6 @@ export class LoginController implements Controller {
       }
 
       await this.authentication.auth(email, password)
-
-      return new Promise((resolve) => resolve(badRequest(new MissingParamError('email'))))
     } catch (error) {
       return new Promise((resolve) => resolve(serverError(error)))
     }
