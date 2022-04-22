@@ -132,3 +132,5 @@ dist
 coverage/lcov-report/singup.ts.html
 coverage/lcov-report/index.html
 coverage/lcov.info
+globalConfig.json
+globalConfig.json
