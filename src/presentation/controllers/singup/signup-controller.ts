@@ -1,4 +1,10 @@
-import { Controller, HttpRequest, HttpResponse, AddAccount, Validation } from './singup-protocols'
+import {
+  Controller,
+  HttpRequest,
+  HttpResponse,
+  AddAccount,
+  Validation,
+} from './singup-controller-protocols'
 import { badRequest, serverError, ok } from '../../helpers/http/http-helper'
 
 import { InvalidParamError } from '../../errors'
