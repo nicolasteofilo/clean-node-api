@@ -13,6 +13,7 @@
     "comma-dangle": "off",
     "space-before-function-paren": "off",
     "@typescript-eslint/indent": "off",
-    "@typescript-eslint/brace-style": "off"
+    "@typescript-eslint/brace-style": "off",
+    "@typescript-eslint/no-misused-promises": "off"
   }
 }
