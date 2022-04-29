@@ -15,7 +15,7 @@ describe('Login Routes', () => {
   })
 
   describe('POST /singup', () => {
-    test('Should return an account on success', async () => {
+    test('Should return 201 on singup', async () => {
       await request(app)
         .post('/api/signup')
         .send({
