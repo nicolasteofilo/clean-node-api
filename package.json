@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node-dev src/main/server.ts",
+    "start": "node dist/main/server.js",
+    "build": "rimraf dist && tsc",
+    "dev": "ts-node-dev src/main/server.ts",
     "prepare": "husky install",
     "lint": "eslint .",
     "lint:fix": "yarn lint -- --fix",
@@ -38,6 +40,7 @@
     "husky": "^7.0.4",
     "jest": "^27.5.1",
     "lint-staged": "^12.3.7",
+    "rimraf": "^3.0.2",
     "sucrase": "^3.21.0",
     "supertest": "^6.2.2",
     "ts-jest": "^27.1.4",
@@ -49,7 +52,6 @@
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.0.0",
     "express": "^4.17.1",
-    "fast-glob": "^3.1.1",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.5.1",
     "validator": "^12.1.0"
