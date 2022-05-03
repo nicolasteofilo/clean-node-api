@@ -7,8 +7,6 @@ import {
 } from './singup-controller-protocols'
 import { badRequest, serverError, ok } from '../../helpers/http/http-helper'
 
-import { InvalidParamError } from '../../errors'
-
 export class SignUpController implements Controller {
   private readonly addAccount: AddAccount
   private readonly validation: Validation

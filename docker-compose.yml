@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3'
 services:
   mongo:
     container_name: clean-node-api-mongo-container
@@ -8,7 +8,6 @@ services:
       - ./data:/data/db
     ports:
       - '27017:27017'
-
   api:
     container_name: clean-node-api-container
     build: .
@@ -18,6 +17,6 @@ services:
     volumes:
       - ./dist:/usr/src/clean-node-api/dist
     ports:
-      - '3333:3333'
+      - '5050:5050'
     links:
       - mongo
