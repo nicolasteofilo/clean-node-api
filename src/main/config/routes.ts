@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Express, Router } from 'express'
-import { readdirSync } from 'node:fs'
+import { readdirSync } from 'fs'
 
 export default (app: Express): void => {
   const router = Router()
