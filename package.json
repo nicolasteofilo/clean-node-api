@@ -8,6 +8,7 @@
     "down": "docker-compose down",
     "start": "node dist/main/server.js",
     "build": "rimraf dist && tsc",
+    "debug": "node --inspect=0.0.0.0:9222 --nolazy dist/main/server.js",
     "prepare": "husky install",
     "lint": "eslint .",
     "lint:fix": "yarn lint -- --fix",
