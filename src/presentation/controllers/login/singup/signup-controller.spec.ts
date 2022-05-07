@@ -9,8 +9,8 @@ import {
   AuthenticationModel,
 } from './singup-controller-protocols'
 
-import { EmailInUseError, MissingParamError, ServerError } from '../../errors'
-import { ok, badRequest, serverError, forbidden } from '../../helpers/http/http-helper'
+import { EmailInUseError, MissingParamError, ServerError } from '../../../errors'
+import { ok, badRequest, serverError, forbidden } from '../../../helpers/http/http-helper'
 
 const makeFakeAccount = (): AccountModel => ({
   id: 'valid_id',
