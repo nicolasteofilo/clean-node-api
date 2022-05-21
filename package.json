@@ -19,7 +19,8 @@
     "test:integration": "npm test -- --watch -c jest-integration-config.js",
     "test:staged": "npm test -- --findRelatedTests",
     "test:ci": "npm test -- --coverage",
-    "test:verbose": "npm test -- --verbose"
+    "test:verbose": "npm test -- --verbose",
+    "ci": "npm run test:ci && npm run lint"
   },
   "devDependencies": {
     "@faker-js/faker": "^6.1.2",
