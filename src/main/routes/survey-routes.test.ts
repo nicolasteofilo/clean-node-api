@@ -73,7 +73,7 @@ describe('Login Routes', () => {
             {
               answer: 'Answer 2',
             },
-          ],
+          ]
         })
         .expect(204)
     })
