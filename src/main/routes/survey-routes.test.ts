@@ -8,6 +8,32 @@ import jwt from 'jsonwebtoken'
 let surveyCollection: Collection
 let accountCollection: Collection
 
+const fakeSurveysData = [{
+  question: 'any_question',
+  answers: [
+    {
+      image: 'any_image',
+      answer: 'any_answer',
+    },
+    {
+      answer: 'other_answer',
+    },
+  ],
+  date: new Date(),
+}, {
+  question: 'any_question2',
+  answers: [
+    {
+      image: 'any_image2',
+      answer: 'any_answer2',
+    },
+    {
+      answer: 'other_answer2',
+    },
+  ],
+  date: new Date(),
+}]
+
 describe('Login Routes', () => {
   beforeAll(async () => {
     await MongoHelper.connect(process.env.MONGO_URL)
@@ -84,6 +110,31 @@ describe('Login Routes', () => {
       await request(app)
         .get('/api/surveys')
         .expect(403)
+    })
+
+    test('Should return 200 on load survey with valid accessToken', async () => {
+      const res = await accountCollection.insertOne({
+        name: 'Nicolas',
+        email: 'nicolas.teofilo@gmail.com',
+        password: '988440271',
+      })
+      const id = res.ops[0]._id
+      const accessToken = jwt.sign({ id }, env.jwtSecret)
+      await accountCollection.updateOne(
+        {
+          _id: id,
+        },
+        {
+          $set: {
+            accessToken,
+          },
+        }
+      )
+      await surveyCollection.insertMany(fakeSurveysData)
+      await request(app)
+        .get('/api/surveys')
+        .set('x-access-token', accessToken)
+        .expect(200)
     })
   })
 })
