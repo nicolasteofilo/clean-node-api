@@ -2,6 +2,7 @@ import {
   AddSurveyModel,
   AddSurveyRepository,
 } from '../../../../data/useCases/add-survey/db-add-survey-protocols'
+import { SurveyModel } from '../../../../domain/models/survey'
 import { MongoHelper } from '../helpers/mongo-helper'
 
 export class SurveyMongoRepository implements AddSurveyRepository {
